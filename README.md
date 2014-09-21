@@ -34,7 +34,7 @@ Results are summarized in three plots, showing:
 * Duration (years):
 * Initial Fixed Costs ($) : Additional cost incurred when buying a property, e.g. closing costs, or repairs.
 
-#### Prop. Taxes, Insurance, Fees
+#### Ownership Costs: Prop. Taxes, Insurance, Fees
 
 * Prop. Tax Rate (%) :
 * Insurance Cost ($) : home-owner insurance premium (annual).
@@ -42,9 +42,10 @@ Results are summarized in three plots, showing:
           
 #### Rent
 
-* Rent, Monthly ($) :
+* Rent, Monthly ($) : ideally the monthly for a comparable property.
 * Renter Insurance ($) :
-* Fraction of Saved Cash Re-invested (%) :
+* Fraction of Saved Cash Re-invested (%) : if the total costs of renting are lower than those of owning, a portion of the saved cash can be re-invested.    
+This parameter regulated the fraction of saved cash that is added to the investments.
     
 #### Income Tax Related
 
