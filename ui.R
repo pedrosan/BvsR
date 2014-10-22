@@ -4,7 +4,7 @@ library(shiny)
 
 shinyUI(fluidPage(
     tags$style(type="text/css",
-      "body  {background-color: #BBBBBB !important; }",
+      "body  {background-color: #BBBBBB !important; font-size: large !important;}",
       "input {color: #990000 !important; max-width: 100px !important; display: inline-block !important;}",
       "h2 {color: #1C6C17 !important; padding: 2px 0px 2px 8px !important; margin: 0px !important; }",
       "h3 {color: #AF0810 !important; padding: 0px 0px 0px 4px !important; margin: 4px 0px 0px 4px !important; border: 0px solid black; }",
@@ -39,38 +39,82 @@ shinyUI(fluidPage(
       tabPanel("Description", 
         wellPanel(
         fluidRow(
-          column(12,
-            p(style = "padding: 0px 12px 0px 6px;", 
-	       "A calculator for a more comprehensive and realistic scenario comparing the cost/benefits of 
-	       buying a property vs. renting a comparable one."),
-            p(style = "padding: 0px 12px 0px 6px;", 
+          column(8, offset = 2,
+            p(style = "padding: 0px 12px 0px 6px; font-size: large !important;", 
+	    HTML("<span style='font-size: large'>
+	    <div style='font-size: x-large; color: #990000; font-weight: bold; margin-bottom: 16px;'>What is it and why we want it? </div>
+<em>The Buy vs. Rent question confuses countless people daily.</em>
+We seek help online, being almost invariably mislead by over-simplistic tools.
+<br />
+The plethora of calculators found on the web in the majority of cases do not
+handle several important aspects of the cost/benefit analysis of buying vs. renting.
+<p>
+For instance:
+<ul>
+<li style='font-size: large'>tax-related items, namely the tax benefits of the mortgage interest deduction, also considering the fact that applying it means itemizing deductions, hence losing the standard deduction.
+<li style='font-size: large'>the benefits of re-investing money potentially saved by renting instead of buying,
+<li style='font-size: large'>the benefit of the return of investment of the capital not put into a down-payment.
+</ul>
+</span>")),
+            p(style = "padding: 0px 12px 0px 6px; font-size: large !important; color: #006600; font-weight: bold;", 
+	       "This presented here is an attempt to put together a calculator for a more comprehensive and realistic 
+	       scenario for the estimate of the cost/benefits of buying a property vs. renting a comparable one."),
+            p(style = "padding: 0px 12px 0px 6px; font-size: large !important;", 
 	       "It takes into account taxes, and tax benefits of the mortgage interest deduction (if applicable when compared
 	       with a standard deduction), the benefits of re-investing money potentially saved by renting instead of buying,
 	       as well of the benefit of the return of investment of the capital not put into a down-payment."),
             div("", style = "padding: 6px 0px 0px 0px !important; width: 100%; "),
 
-            p(style = "padding: 0px 12px 0px 6px;", 
-	        "Given the parameter values, 250 simulations are performed, with stochastic 'predictions' of 
-		 the property appreciation, (alternative) investment return, inflation, rent increase."
-	    ),
-            p(style = "padding: 0px 12px 0px 6px;", 
-	        "For each simulation a 'trade-off' value is computed, giving the difference between buying the given
+            p(style = "padding: 0px 12px 0px 6px; font-size: large !important;", 
+	    HTML("
+	    <div style='font-size: x-large; color: #990000; font-weight: bold; margin-bottom: 12px;'>A simulations-based approach</div>
+	        Given the parameter values, 250 simulations are performed, with stochastic 'predictions' of 
+		the property appreciation, (alternative) investment return, inflation, rent increase.
+		<p>
+	        For each simulation a 'trade-off' value is computed, giving the difference between buying the given
 		 property and renting (including the return of the investment of the cash not put into the property).
-		 Positive values are in favor of buying, negative indicate that renting would be more beneficial financially."
+		 Positive values are in favor of buying, negative indicate that renting would be more beneficial financially.")
 	    ),
-            p(style = "padding: 0px 12px 0px 6px;", 
-		 "Results are summarized in three plots, showing 
-		  (1) the trends of the 'tradeoff' amount, 
-		  (2) the fraction of simulations favoring buying over renting, over time,
-		  (3) the distribution of tradeoff amounts over time, highligthing the distributions at 1/2, 3/4 and at the end of the loan period."
+            p(style = "padding: 0px 12px 0px 6px; font-size: large !important;", 
+		 HTML("Results are summarized in three plots, showing
+		  <ul>
+		  <li style='font-size: large'> the trends of the 'tradeoff' amount, </li>
+		  <li style='font-size: large'> the fraction of simulations favoring buying over renting, over time,</li>
+		  <li style='font-size: large'> the distribution of tradeoff amounts over time, highligthing the distributions at 1/2, 3/4 
+		  and at the end of the loan period.</li>
+		  </ul>")
 	    ),
             div("", style = "padding: 6px 0px 0px 0px !important; width: 100%; "),
 
-	    h3("Terse explanation of the input parameters:")
-	)), 
+            p(style = "padding: 0px 12px 0px 6px; font-size: large !important;", 
+	    HTML("
+	    <div style='font-size: x-large; color: #990000; font-weight: bold; margin-bottom: 12px;'>Drawing from real data...</div>
+		The simulations performed by this simple Application are purely based on general probability density functions, 
+		namely Gaussian and Exponential.
+		<p>
+		However it is clear that for the <em>Annual Variations</em> inputs it would be possible to apply a
+		more real-data-driven approach, by sampling their values from distributions derived from real data from stock market or bonds
+		investment returns, real estate property values, and inflation.
+		Investment returns could be drawn from a proxy for different investing styles: bond indexes for conservative, 
+		S&P500 for middle-ground, NASDAQ composite for more aggressive approach.
+		<br />
+		Real estate property values could be adjusted regionally, increasing the usefulness and relevance of the Calculator.
+		<br />
+		The data exist and accessible.  I just did not have time to bring them into <em>the fold</em>... 
+		")
+	    ),
+            div("", style = "padding: 6px 0px 0px 0px !important; width: 100%; ")
 
+	))
+
+        )
+      ),
+    
+      tabPanel("Explanation of parameters", 
+        wellPanel(
         fluidRow(
           column(5, offset = 1,
+            h3("Buy, Rent and Tax Parameters"),
      	    h4("House and Mortgage"),
               strong("Purchase Price ($) :"),
               strong("Down Payment (%) :"), br(), 
@@ -104,6 +148,7 @@ shinyUI(fluidPage(
 	  ),
 
           column(6,
+            h3("Annual Variations"),
             h4("Property Appreciation"),
 	      span("(Assuming uncorrelated normally distributed values)"), br(),
               strong("Appreciation (%) :"), span("mean yearly increase of property values."), br(),
@@ -130,7 +175,7 @@ shinyUI(fluidPage(
 	)
       ),
     
-      tabPanel("Inputs: Main", 
+      tabPanel("Inputs: Buy, Rent and Taxes", 
         wellPanel(
         fluidRow(
           column(3,
@@ -171,21 +216,25 @@ shinyUI(fluidPage(
         fluidRow(
           column(3,
             h4("Property Appreciation"),
+            p("[uncorrelated N(mu, sigma)]", style = "color: #990000; font-style: italic;"),
             numericInput("annual_appreciation",              "Appreciation (%)", min = 0.0, max = 25.0, value = 3.0, step = 0.5),
             numericInput("annual_appreciation_sd",           "Appreciation Std.Dev. (%)", min = 0.0, max = 10.0, value = 2.0, step = 0.5)
           ),
           column(3,
             h4("Cash Investment Return"),
+            p("[uncorrelated N(mu, sigma)]", style = "color: #990000; font-style: italic;"),
             numericInput("annual_inv",                       "Return (%)", min = 0.0, max = 20.0, value = 5.0 , step = 0.5),
             numericInput("annual_inv_sd",                    "Return Std.Dev. (%)", min = 0.0, max = 10.0, value = 7.0, step = 0.5)
           ),
           column(3,
             h4("Inflation"),
+            p("[uncorrelated N(mu, sigma)]", style = "color: #990000; font-style: italic;"),
             numericInput("annual_inflation",                 "Inflation (%)", min = 0.0, max = 15.0, value = 1.5, step = 0.5),
             numericInput("annual_inflation_sd",              "Inflation Std.Dev. (%)", min = 0.0, max = 5.0, value = 1.0, step = 0.5)
           ),
           column(3,
             h4("Rent Increase"),
+            p("[exponential distr. with this mean]", style = "color: #990000; font-style: italic;"),
             numericInput("annual_rent_extra_increase_mean",  "Extra Increase Over Inflation (%)", min = 0.0, max = 10.0, value = 0.5, step = 0.25)
           )
         ))
