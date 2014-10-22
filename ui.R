@@ -42,23 +42,27 @@ shinyUI(fluidPage(
           column(8, offset = 2,
             p(style = "padding: 0px 12px 0px 6px; font-size: large !important;", 
 	    HTML("<span style='font-size: large'>
-	    <div style='font-size: x-large; color: #990000; font-weight: bold; margin-bottom: 16px;'>What is it and why we want it? </div>
-<em>The Buy vs. Rent question confuses countless people daily.</em>
-We seek help online, being almost invariably mislead by over-simplistic tools.
-<br />
-The plethora of calculators found on the web in the majority of cases do not
-handle several important aspects of the cost/benefit analysis of buying vs. renting.
-<p>
-For instance:
-<ul>
-<li style='font-size: large'>tax-related items, namely the tax benefits of the mortgage interest deduction, also considering the fact that applying it means itemizing deductions, hence losing the standard deduction.
-<li style='font-size: large'>the benefits of re-investing money potentially saved by renting instead of buying,
-<li style='font-size: large'>the benefit of the return of investment of the capital not put into a down-payment.
-</ul>
-</span>")),
+	        <div style='font-size: x-large; color: #990000; font-weight: bold; margin-bottom: 16px;'>What is it and why we want it? </div>
+                <em>The Buy vs. Rent question confuses countless people daily.</em>
+                We seek help online, being almost invariably mislead by over-simplistic tools.
+                <br />
+                The plethora of calculators found on the web in the majority of cases do not
+                handle several important aspects of the cost/benefit analysis of buying vs. renting.
+                <p>
+                For instance:
+                <ul>
+                <li style='font-size: large'>tax-related items, namely the tax benefits of the mortgage interest deduction, 
+	               also considering the fact that applying it means itemizing deductions, hence losing the standard deduction.</li>
+                <li style='font-size: large'>the benefits of re-investing money potentially saved by renting instead of buying,</li>
+                <li style='font-size: large'>the benefit of the return of investment of the capital not put into a down-payment.</li>
+                </ul>
+                </span>")
+	    ),
+
             p(style = "padding: 0px 12px 0px 6px; font-size: large !important; color: #006600; font-weight: bold;", 
 	       "This presented here is an attempt to put together a calculator for a more comprehensive and realistic 
 	       scenario for the estimate of the cost/benefits of buying a property vs. renting a comparable one."),
+
             p(style = "padding: 0px 12px 0px 6px; font-size: large !important;", 
 	       "It takes into account taxes, and tax benefits of the mortgage interest deduction (if applicable when compared
 	       with a standard deduction), the benefits of re-investing money potentially saved by renting instead of buying,
@@ -67,28 +71,29 @@ For instance:
 
             p(style = "padding: 0px 12px 0px 6px; font-size: large !important;", 
 	    HTML("
-	    <div style='font-size: x-large; color: #990000; font-weight: bold; margin-bottom: 12px;'>A simulations-based approach</div>
+	        <div style='font-size: x-large; color: #990000; font-weight: bold; margin-bottom: 12px;'>A simulations-based approach</div>
 	        Given the parameter values, 250 simulations are performed, with stochastic 'predictions' of 
 		the property appreciation, (alternative) investment return, inflation, rent increase.
 		<p>
 	        For each simulation a 'trade-off' value is computed, giving the difference between buying the given
-		 property and renting (including the return of the investment of the cash not put into the property).
-		 Positive values are in favor of buying, negative indicate that renting would be more beneficial financially.")
+		property and renting (including the return of the investment of the cash not put into the property).
+		Positive values are in favor of buying, negative indicate that renting would be more beneficial financially.")
 	    ),
+
             p(style = "padding: 0px 12px 0px 6px; font-size: large !important;", 
-		 HTML("Results are summarized in three plots, showing
-		  <ul>
-		  <li style='font-size: large'> the trends of the 'tradeoff' amount, </li>
-		  <li style='font-size: large'> the fraction of simulations favoring buying over renting, over time,</li>
-		  <li style='font-size: large'> the distribution of tradeoff amounts over time, highligthing the distributions at 1/2, 3/4 
-		  and at the end of the loan period.</li>
-		  </ul>")
+	    HTML("Results are summarized in three plots, showing
+		 <ul>
+		 <li style='font-size: large'> the trends of the 'tradeoff' amount, </li>
+		 <li style='font-size: large'> the fraction of simulations favoring buying over renting, over time,</li>
+		 <li style='font-size: large'> the distribution of tradeoff amounts over time, highligthing the distributions at 1/2, 3/4 
+		 and at the end of the loan period.</li>
+		 </ul>")
 	    ),
             div("", style = "padding: 6px 0px 0px 0px !important; width: 100%; "),
 
             p(style = "padding: 0px 12px 0px 6px; font-size: large !important;", 
 	    HTML("
-	    <div style='font-size: x-large; color: #990000; font-weight: bold; margin-bottom: 12px;'>Drawing from real data...</div>
+	        <div style='font-size: x-large; color: #990000; font-weight: bold; margin-bottom: 12px;'>Drawing from real data...</div>
 		The simulations performed by this simple Application are purely based on general probability density functions, 
 		namely Gaussian and Exponential.
 		<p>
@@ -103,7 +108,13 @@ For instance:
 		The data exist and accessible.  I just did not have time to bring them into <em>the fold</em>... 
 		")
 	    ),
+            div("", style = "padding: 6px 0px 0px 0px !important; width: 100%; "), 
+
+            p(style = "padding: 0px 12px 0px 6px; font-size: large !important;", 
+	    HTML("<span style='color: #000099;'><b>Footnote:</b> the R code for the application is posted on <a href='https://github.com/pedrosan/BvsR'>GitHub</a></span>.")
+	    ),
             div("", style = "padding: 6px 0px 0px 0px !important; width: 100%; ")
+
 
 	))
 
