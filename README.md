@@ -1,7 +1,9 @@
 BvsR
 ====
 
-## A _Buy vs. Rent_ calculator [Running on ShinyApps](https://pedrosan.shinyapps.io/AdvBvsR/)
+## A _Buy vs. Rent_ calculator 
+
+### [<Running on ShinyApps>](https://pedrosan.shinyapps.io/AdvBvsR/)
 
 A calculator for a more comprehensive and realistic scenario comparing the cost/benefits of 
 buying a property vs. renting a comparable one.
